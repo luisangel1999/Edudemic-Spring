@@ -28,6 +28,10 @@ public class EstudianteController {
 	public String nosotros(){
 		return "/landing/nosotros";
 	}
+	@GetMapping("/admin")
+	public String admin(){
+		return "/admin/admin";
+	}
 	@GetMapping("/registro/estudiante")
 	public String registrarEstudianteForm(Model model) 
 	{
