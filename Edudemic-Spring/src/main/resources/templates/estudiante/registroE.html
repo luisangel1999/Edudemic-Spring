@@ -1,28 +1,77 @@
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<th:block th:include="fragments/head"></th:block>
+<meta charset="UTF-8">
 <body>
-	<h2>Nuevo estudiante</h2>
-	<form th:action="@{/estudiantes}" th:object="${estudiante}" method="POST">
-		<label>Nombre</label> 
-		<input type="text" name="nombres" th:field="*{nombres}" placeholder="Ingrese nombre"></input> 
-		<label>Apellido</label>
-		<input type="text" name="apellidos" th:field="*{apellidos}" placeholder="Ingrese apellido"></input> 
-		<label>Edad</label> 
-		<input type="text" name="edad" th:field="*{edad}" placeholder="Ingrese edad"></input>
-		<label>Telefono</label> 
-		<input type="text" name="telefono" th:field="*{telefono}" placeholder="Ingrese telefono"></input> 
-		<label>Correo</label>
-		<input type="text" name="correo" th:field="*{correo}" placeholder="Ingrese correo"></input> 
+	<th:block th:include="fragments/navbarAdmin"></th:block>
 
-		<label>Fecha</label> 
-		<input type="text" name="fecha" th:field="*{fecha}" placeholder="Ingrese fecha"></input> 
-		<label>Dni</label> 
-		<input type="text" name="dni" th:field="*{dni}" placeholder="Ingrese dni"></input>
-		<button type="submit">Registro</button>
-	</form>
+	<div class="container">
+		<form th:action="@{/estudiantes}" th:object="${estudiante}"
+			method="POST">
+			<br></br>
+			<h1 class="display-3">Nuevo estudiante</h1>
+			<!-- 2 column grid layout with text inputs for the first and last names -->
+			<div class="row mb-4">
+				<div class="col">
+					<div class="form-outline">
+						<input type="text" id="form6Example1" class="form-control"
+							name="nombres" th:field="*{nombres}" /> <label
+							class="form-label" for="form6Example1">Nombres</label>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-outline">
+						<input type="text" id="form6Example2" class="form-control"
+							name="apellidos" th:field="*{apellidos}" /> <label
+							class="form-label" for="form6Example2">Apellidos</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- Text input -->
+			<div class="form-outline mb-4">
+				<input type="text" id="form6Example3" class="form-control" /> <label
+					class="form-label" for="form6Example3">Edad</label>
+			</div>
+
+			<!-- Text input -->
+			<div class="form-outline mb-4">
+				<input type="text" id="form6Example4" class="form-control"
+					name="dni" th:field="*{dni}" /> <label class="form-label"
+					for="form6Example4">Dni</label>
+			</div>
+
+			<!-- Email input -->
+			<div class="form-outline mb-4">
+				<input type="email" id="form6Example5" class="form-control"
+					name="correo" th:field="*{correo}" /> <label class="form-label"
+					for="form6Example5">Email</label>
+			</div>
+
+			<!-- Number input -->
+			<div class="form-outline mb-4">
+				<input type="number" id="form6Example6" class="form-control"
+					name="telefono" th:field="*{telefono}" /> <label
+					class="form-label" for="form6Example6">Telefono</label>
+			</div>
+
+			<div class="form-outline mb-4">
+				<input type="text" id="form6Example4" class="form-control"
+					name="fecha" th:field="*{fecha}" /> <label class="form-label"
+					for="form6Example4">Fecha</label>
+			</div>
+			<!-- Submit button -->
+			<button type="submit" class="btn btn-primary btn-block mb-4">Registrar</button>
+				
+						<br></br>
+			
+		</form>
+	</div>
+	
+	<th:block th:include ="fragments/footer"></th:block>
+	<th:block th:include="fragments/scripts"></th:block>
+
 </body>
-</html>

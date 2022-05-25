@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<th:block th:include="fragments/head"></th:block>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 <body>
-	<h2>Nuevo curso</h2> 
-	<form th:action="@{/cursos}" th:object="${curso}" method="POST">
-			<label>Nombre</label>
-			<input type="text" name="nombre" th:field="*{nombre}" placeholder="Ingrese nombre"></input>
-			<label>Descripción</label>
-			<input type="text" name="descripcion" th:field="*{descripcion}" placeholder="Ingrese descripción"></input>
-			<button type="submit">Registro</button>
-	</form>
+	<th:block th:include="fragments/navbarAdmin"></th:block>
+
+	<div class="container">
+<form th:action="@{/cursos}" th:object="${curso}" method="POST">
+<br></br>
+<h1 class="display-3">Nuevo curso</h1>
+  <!-- Name input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form4Example1" class="form-control" name="nombre" th:field="*{nombre}" />
+    <label class="form-label" for="form4Example1" >Nombre Curso</label>
+  </div>
+
+
+
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <textarea class="form-control" id="form4Example3" rows="4" name="descripcion" th:field="*{descripcion}"></textarea>
+    <label class="form-label" for="form4Example3">Descripción</label>
+  </div>
+
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Registrar</button>
+</form>
+
+	</div>
+	<th:block th:include="fragments/scripts"></th:block>
+
 </body>
 </html>
