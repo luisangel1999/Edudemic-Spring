@@ -45,4 +45,9 @@ public class EstudianteController {
 		estudianteService.registrarEstudiante(estudiante);
 		return "redirect:/";
 	}
+	@GetMapping("/lista/estudiante")
+	public String listarEstudiante(Model model) {
+		model.addAttribute("estudiantes",estudianteService.listaEstudiantes());
+		return "/estudiante/listaE";
+	}
 }

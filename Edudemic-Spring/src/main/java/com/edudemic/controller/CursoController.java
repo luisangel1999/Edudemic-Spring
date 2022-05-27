@@ -34,4 +34,9 @@ public class CursoController {
 		cursoService.registrarCurso(curso);
 		return "redirect:/";
 	}
+	@GetMapping("/lista/curso")
+	public String listarEstudiante(Model model) {
+		model.addAttribute("cursos",cursoService.listarCurso());
+		return "/curso/listaC";
+	}
 }
