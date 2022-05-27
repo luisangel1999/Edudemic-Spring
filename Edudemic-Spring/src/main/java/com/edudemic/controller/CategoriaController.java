@@ -16,7 +16,6 @@ public class CategoriaController {
 	{
 		this.categoriaService=categoriaService;
 	}
-	
 	@GetMapping("/registro/categoria")
 	public String registrarCategoriaForm(Model model) 
 	{

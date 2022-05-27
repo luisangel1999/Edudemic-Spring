@@ -22,7 +22,4 @@ public class CategoriaService {
 	{
 		return categoriaRepository.save(c);
 	}
-	public Categoria buscarPorId(Long id) {
-		return categoriaRepository.findById(id).get();
-	}
 }
